@@ -2,6 +2,7 @@
   "projectId": "2s5kzx",
   "baseUrl": "https://us1.rallydev.com",
   "defaultCommandTimeout": 45000,
-  "requestTimeout":	10000,
-  "env":{"CYPRESS_RECORD_KEY":"1b589668-1e49-4a72-9b4c-3163ccaa2d65"}
+  "requestTimeout": 10000,
+  "env":{"CYPRESS_RECORD_KEY":"1b589668-1e49-4a72-9b4c-3163ccaa2d65",
+         "DEBUG=cypress": "*"}
 }
