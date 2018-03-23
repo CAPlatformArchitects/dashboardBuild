@@ -47,7 +47,7 @@
       AppName = [
         "Iteration Retrospective",//Team Retrospective
         "Release & Iteration Burndown",//Team Retrospective
-        "Iteration Cummulative Flow",//Team Retrospective
+        "Iteration Cumulative Flow",//Team Retrospective
         "Iteration Scope Change",//Team Retrospective
         "Estimation Board (New)",//Estimation Board
         "Iteration Planning Board",//Planning Board
