@@ -79,18 +79,18 @@ PageNameAppLen = PageNameApp.length;
       cy.get('.chr-NavigationHeader-menuButtonTitleDiv').click()//open side nav bar
       cy.get('.chr-NavigationSidebarPagesHeader-ellipsisButton').click()//open page options
       cy.get(`a.chr-NavigationPageTileLink:contains(${PageNameApp[i]})`).click()//find custom page
-      cy.wait(10000)
+    //  cy.wait(15000)
     //  cy.get('button.smb-Button.smb-Button--icon.smb-Button--lg > div.smb-Button-contents > span.smb-Button-icon > span.smb-Icon.smb-Icon--gear').click() //click on gear, set column spec
-        cy.get('div.smb-DropdownList.smb-DropdownList--bottom.smb-DropdownList--right.smb-Dropdown.smb-DropdownMenu > button.smb-Button.smb-Button--icon.smb-Button--lg > div.smb-Button-contents > span.smb-Button-icon > span.smb-Icon.smb-Icon--gear').click() //click on gear, set column spec
+    //    cy.get('div.smb-DropdownList.smb-DropdownList--bottom.smb-DropdownList--right.smb-Dropdown.smb-DropdownMenu > button.smb-Button.smb-Button--icon.smb-Button--lg > div.smb-Button-contents > span.smb-Button-icon > span.smb-Icon.smb-Icon--gear').click() //click on gear, set column spec
    //   cy.get('div.smb-DropdownList.smb-DropdownList--bottom.smb-DropdownList--right.smb-Dropdown.smb-DropdownMenu > button.smb-Button.smb-Button--icon.smb-Button--lg').click() //click on gear, set column spec
    //   $$('div.smb-DropdownList.smb-DropdownList--bottom.smb-DropdownList--right.smb-Dropdown.smb-DropdownMenu > button.smb-Button.smb-Button--icon.smb-Button--lg')
    //   $$('div.smb-DropdownList.smb-DropdownList--bottom.smb-DropdownList--right.smb-Dropdown.smb-DropdownMenu > button.smb-Button.smb-Button--icon.smb-Button--lg > div.smb-Button-contents > span.smb-Button-icon')
 //$$('div.smb-DropdownList.smb-DropdownList--bottom.smb-DropdownList--right.smb-Dropdown.is-open.smb-DropdownMenu')
 
 
-      cy.get('span.smb-DropdownItem-text:contains("Change Layout")').click()//set column spec
-      cy.get('div.smb-PanelBody > div.chr-DashboardLayoutPicker > div.chr-DashboardLayoutPicker-item.two_split').click()//Two Split
-      cy.wait(10000)
+  //    cy.get('span.smb-DropdownItem-text:contains("Change Layout")').click()//set column spec
+  //    cy.get('div.smb-PanelBody > div.chr-DashboardLayoutPicker > div.chr-DashboardLayoutPicker-item.two_split').click()//Two Split
+      cy.wait(15000)
     //  cy.get('div.smb-PanelBody > div.chr-DashboardLayoutPicker > div.chr-DashboardLayoutPicker-item.single').click() //Single IFF Col Flag Set
     //  cy.get('div.smb-PanelBody > div.chr-DashboardLayoutPicker > div.chr-DashboardLayoutPicker-item.two_weighted_left').click() //two with weighted left
     //  cy.get('div.smb-PanelBody > div.chr-DashboardLayoutPicker > div.chr-DashboardLayoutPicker-item.two_weighted_right').click() //two with weighted right
