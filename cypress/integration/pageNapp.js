@@ -6,6 +6,10 @@
   //This sampel is also used to verify the CL scripting requred to automate dashboard creation with
   //the automated creation of workspaces.
 
+  //need workspace as input and re-write for page create first, then App to page.
+  //ability to apss in workspace perameter.
+  
+
   describe('Add Custom Pages', function(){
     before(function(){
         cy.visit('/slm/login.op', { timeout: 20000 })
