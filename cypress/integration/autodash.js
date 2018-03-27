@@ -46,7 +46,7 @@
     //Create Pages
       for (i = 0; i < 4; i++) {
         cy.visit(`/slm/wt/new.sp?projectScopeUp=false&projectScopeDown=true&pid=${page[i].pageSec}`)//new page link in specified section
-     //   cy.log(`the value of ${i} and xpageName is ${page[i].pageName}`)//just console logging
+     //   cy.log(`the value of ${i} and pageName is ${page[i].pageName}`)//just console logging
         cy.get('input#name').type(`${page[i].pageName}`)//name the page
         cy.get(`${page[i].pageShare}`).click()//set share specification
         cy.get(`${page[i].pageFilter}`).click()//set filter specification
@@ -58,7 +58,7 @@
     for (i = 0; i < 4; i++) {
   //    var hold, pg;
   //    hold = ((pg = page[i].pageLayout) != "item.single")//if false inc i
-   //   cy.log(`logs: ${i}, ${pg}, ${hold}, xpageName: ${page[i].pageName}, xpageLayout: ${page[i].pageLayout}`)//just console logging
+   //   cy.log(`logs: ${i}, ${pg}, ${hold}, pageName: ${page[i].pageName}, pageLayout: ${page[i].pageLayout}`)//just console logging
       cy.get('.chr-NavigationHeader-menuButtonTitleDiv').click()//open side nav bar
       cy.get('.chr-NavigationSidebarPagesHeader-ellipsisButton').click()//open page options
       cy.get(`a.chr-NavigationPageTileLink:contains(${page[i].pageName})`).click()//find custom page

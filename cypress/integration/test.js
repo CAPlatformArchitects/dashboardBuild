@@ -18,3 +18,6 @@ function greeting (name) {
 }
 var personsName = 'Joe';
 greeting(personsName);  // Hello Joe
+
+var array = [];
+array[0] = {p1:1, p2:1, p3:1, p4:1}
