@@ -29,37 +29,10 @@
  it('adds a custom page', function(){
   var pageName, pageSec, pageLayout, pageFilter, pageShare, appName, appType, i;
   var page = {
-     0 : { "pageName": "Team Retrospective", "pageSec": "myhome","pageLayout" : "item.two_split","pageFilter": "input#iteration_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     1 : { "pageName": "Estimation Board","pageSec": "backlogandschedules", "pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     2 : { "pageName": "Planning Board","pageSec": "backlogandschedules", "pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     3 : { "pageName": "Task Board","pageSec": "dashboards","pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     
-     4 : { "pageName": "IT Mgr/Dir Dashboard (c)","pageSec": "myhome","pageLayout" : "item.two_split","pageFilter": "input#release_radio","pageShare": "input#sharedWithAllProjects"},
-     5 : { "pageName": "Program Quality Dashboard (c)","pageSec": "dashboards","pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     6 : { "pageName": "Product Owner Dashboard (c)","pageSec": "dashboards","pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     7 : { "pageName": "Team Page (c)","pageSec": "dashboards","pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     8 : { "pageName": "Iteration Health (c)","pageSec": "dashboards","pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     9 : { "pageName": "Program Release","pageSec": "dashboards","pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     10 : { "pageName": "Dependency Mgmt","pageSec": "dashboards","pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     11 : { "pageName": "Individual Contributor","pageSec": "dashboards","pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     12 : { "pageName": "Program Dashboard (c)","pageSec": "dashboards","pageLayout" : "item.single","pageFilter": "input#no_scope_radio","pageShare": "input#sharedWithAllProjects"},
-     
-          
-     myhome	IT Mgr/Dir Dashboard (c)	item.two_split	input#release_radio
-myhome	Program Quality Dashboard (c)	item.two_split	input#release_radio
-myhome	Product Owner Dashboard (c)	item.three_weighted_center	
-myhome	Team Page (c)	item.three_weighted_center	input#iteration_scope_radio
-myhome	Iteration Health (c)	item.single	
-myhome	Program Release (c)	item.two_weighted_right	
-myhome	Dependency Mgmt (c)	item.single	
-myhome	Individual Contributor (c)	item.two_split	
-myhome	Program Dashboard (c)	item.three_weighted_center	
-backlogandschedules	Estimation Boards (c)	item.single	
-backlogandschedules	PI Objectives and Risks (c)	item.two_split	
-    
-    
-    
-    
+     0 : { "pageName": "Team Retrospective", "pageSec": "myhome",              "pageLayout" : "item.two_split",           "pageFilter": "input#iteration_scope_radio",    "pageShare": "input#sharedWithAllProjects"},
+     1 : { "pageName": "Estimation Board",   "pageSec": "backlogandschedules", "pageLayout" : "item.single",              "pageFilter": "input#no_scope_radio",           "pageShare": "input#sharedWithAllProjects"},
+     2 : { "pageName": "Planning Board",     "pageSec": "backlogandschedules", "pageLayout" : "item.single",              "pageFilter": "input#no_scope_radio",           "pageShare": "input#sharedWithAllProjects"},
+     3 : { "pageName": "Task Board",         "pageSec": "dashboards",          "pageLayout" : "item.single",              "pageFilter": "input#no_scope_radio",           "pageShare": "input#sharedWithAllProjects"},
     }
   var app = {
     0 : { "pageName": "Team Retrospective",   "appName": "Iteration Retrospective",         "appType" : "Subscription",},
