@@ -1,15 +1,4 @@
-//Author: J. Wagner AJSE-E
-//Date: originated 2/26/2018
-//SCM: GitHub CAPlatformArchitects acct
-//Purpose: This code is to provide an example of adding a custom page and an app to a page.
-  //This code will be built on to automate dashboard creation for demo workspaces.
-  //This sampel is also used to verify the CL scripting requred to automate dashboard creation with
-  //the automated creation of workspaces.
-
-  //need workspace as input and re-write for page create first, then App to page.
-  //ability to apss in workspace perameter.
-  
-
+//This is just for deleting pages
   describe('Add Custom Pages', function(){
     before(function(){
         cy.visit('/slm/login.op', { timeout: 20000 })
@@ -119,61 +108,21 @@
     var alen = Object.keys(app).length
     cy.log(`the value of ${alen} and pageName is ${Object.keys(app).length}`)//just console logging
 
-       //Create Pages
-       //TODO:  If page exists, do not try to create
-      for (i = 0; i < 4; i++) {
-        cy.visit(`/slm/wt/new.sp?projectScopeUp=false&projectScopeDown=true&pid=${page[i].pageSec}`)//new page link in specified section
-     //   cy.log(`the value of ${i} and pageName is ${page[i].pageName}`)//just console logging
-        cy.get('input#name').type(`${page[i].pageName}`)//name the page
-        cy.get(`${page[i].pageShare}`).click()//set share specification
-        cy.get(`${page[i].pageFilter}`).click()//set filter specification
-        cy.get('button#save_and_close_btn.ed-btn-wide').click()//save custom page
-        //cy.visit('/#/')//go to default starting page - to get to nav menu
-      };
-
-      //cy.visit('/#/')//go to default starting page - to get to nav menu
-
-      //Create Page Layouts
-    for (i = 0; i < 4; i++) {
-      var layout = page[i].pageLayout
-        if (layout == "item.single") {
-        cy.log(`layout is:  ${page[i].pageLayout} and ${layout} : ${page[i].pageName}`)
-        } else {
-      cy.log(`layout is:  ${page[i].pageLayout} and ${layout} : ${page[i].pageName}`)
+     
+      //Delete page
+    for (i = 0; i < plen; i++) {
+      cy.log(`page is: ${page[i].pageName}`)
       cy.visit('/#/196025249156d/dashboard/')//go to default starting page - to get to nav menu
       cy.get('.chr-NavigationHeader-menuButtonTitleDiv').click()//open side nav bar
       cy.get('.chr-NavigationSidebarPagesHeader-ellipsisButton').click()//open page options
-         // cy.get(`[title="${page[i].pageName} Page Actions"] > .smb-Button > .smb-Button-contents > .smb-Button-icon > .smb-Icon`).pause()
-      cy.get(`a.chr-NavigationPageTileLink:contains(${page[i].pageName})`).click()//find custom page
-      cy.wait(2000) //don't want to use this, but it seems I need to in order for the next line to reliably find the gear, still researching.
-      cy.get(':nth-child(1) > .smb-DropdownList > .smb-Button').click()//gear menu for page
-      cy.get('span.smb-DropdownItem-text:contains("Change Layout")').click()//set column spec
-      cy.get(`div.smb-PanelBody > div.chr-DashboardLayoutPicker > div.chr-DashboardLayoutPicker-${page[i].pageLayout}`).click()//add layout as specified
 
-//      cy.get('.chr-NavigationSubmenuContainer > .chr-ComponentsSideBar-header > [title="Close"] > .smb-Button > .smb-Button-contents > .smb-Button-icon > .smb-Icon').click()
-//[title="Shopping Team Pages"] > .smb-Button > .smb-Button-contents > .smb-Button-icon > .smb-Icon
-    }
-   
+      cy.get(`[title="${page[i].pageName} Page Actions"] > .smb-Button > .smb-Button-contents > .smb-Button-icon > .smb-Icon`).click()
+
+      cy.get('span.smb-DropdownItem-text:contains("Delete Page")').click()
+
+      cy.get('.smb-Button--primary > .smb-Button-contents > .smb-Button-children > span').click()
+
       };
-
-    //Add Apps to Pages
-    for (i = 0; i < alen; i++) {
-     // var sold, pi, pj;
-     // sold = ((pi = app[i].pageName) = (pj = app[i-1].pageName))//if true just get gear, skip finding page
-     // cy.log(`logs: ${i}, ${i-1}, ${pi}, ${pj}, ${sold} , pageLayout: ${app[i].pageName}`)//just console logging
-     //TODO: If app is on same page, don't search, add this.
-      cy.visit('/#/196025249156d/dashboard/')//go to default starting page - to get to nav menu
-      cy.get('.chr-NavigationHeader-menuButtonTitleDiv').click()//open side nav bar
-      cy.get('.chr-NavigationSidebarPagesHeader-ellipsisButton').click()//open page options
-      cy.get(`a.chr-NavigationPageTileLink:contains(${app[i].pageName})`).click()//find custom page
-      cy.wait(2000) //don't want to use this, but it seems I need to in order for the next line to reliably find the gear, still researching.
-      //cy.get('.smb-DropdownList > .smb-Button > .smb-Button-contents > .smb-Button-icon > .smb-Icon').click()
-      cy.get(':nth-child(1) > .smb-DropdownList > .smb-Button').click()//gear menu for page
-      cy.get("span.smb-DropdownItem-text:contains('Add App')").click()//Add App
-      cy.get('span.smb-Icon.smb-Icon--grid').click()
-      cy.get(`tr.smb-TableRow:contains("${app[i].appName}") > td.smb-TableCell.u-textLeft > button.smb-Button.smb-Button--primary.smb-Button--sm.chr-AppAddButton > div.smb-Button-contents > span.smb-Button-children`).click()
-      //cy.visit('/#/')//go to default starting page - to get to nav menu
-    }
 
   })//end of function (it) adds custom page
 })// end of function (describe) add custom page
