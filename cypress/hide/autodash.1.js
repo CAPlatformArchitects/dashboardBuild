@@ -7,8 +7,7 @@
   //the automated creation of workspaces.
 
   //need workspace as input and re-write for page create first, then App to page.
-  //ability to apss in workspace perameter.
-  
+  //ability to apss in workspace perameter. 
 
   describe('Add Custom Pages', function(){
     before(function(){
@@ -121,7 +120,7 @@
 
        //Create Pages
        //TODO:  If page exists, do not try to create
-      for (i = 0; i < 4; i++) {
+      for (i = 0; i < plen; i++) {
         cy.visit(`/slm/wt/new.sp?projectScopeUp=false&projectScopeDown=true&pid=${page[i].pageSec}`)//new page link in specified section
      //   cy.log(`the value of ${i} and pageName is ${page[i].pageName}`)//just console logging
         cy.get('input#name').type(`${page[i].pageName}`)//name the page
@@ -131,16 +130,16 @@
         //cy.visit('/#/')//go to default starting page - to get to nav menu
       };
 
-      //cy.visit('/#/')//go to default starting page - to get to nav menu
-
       //Create Page Layouts
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < plen; i++) {
       var layout = page[i].pageLayout
         if (layout == "item.single") {
-        cy.log(`layout is:  ${page[i].pageLayout} and ${layout} : ${page[i].pageName}`)
+        cy.log(`skipping because layout is: ${layout} : ${page[i].pageName}`)
         } else {
-      cy.log(`layout is:  ${page[i].pageLayout} and ${layout} : ${page[i].pageName}`)
-      cy.visit('/#/196025249156d/dashboard/')//go to default starting page - to get to nav menu
+      cy.log(`layout is: ${layout} : ${page[i].pageName}`)
+
+      cy.visit('/slm/').reload(true)
+      //cy.visit('/#/196025249156d/dashboard/')//go to default starting page - to get to nav menu
       cy.get('.chr-NavigationHeader-menuButtonTitleDiv').click()//open side nav bar
       cy.get('.chr-NavigationSidebarPagesHeader-ellipsisButton').click()//open page options
          // cy.get(`[title="${page[i].pageName} Page Actions"] > .smb-Button > .smb-Button-contents > .smb-Button-icon > .smb-Icon`).pause()
@@ -153,7 +152,6 @@
 //      cy.get('.chr-NavigationSubmenuContainer > .chr-ComponentsSideBar-header > [title="Close"] > .smb-Button > .smb-Button-contents > .smb-Button-icon > .smb-Icon').click()
 //[title="Shopping Team Pages"] > .smb-Button > .smb-Button-contents > .smb-Button-icon > .smb-Icon
     }
-   
       };
 
     //Add Apps to Pages
@@ -162,7 +160,8 @@
      // sold = ((pi = app[i].pageName) = (pj = app[i-1].pageName))//if true just get gear, skip finding page
      // cy.log(`logs: ${i}, ${i-1}, ${pi}, ${pj}, ${sold} , pageLayout: ${app[i].pageName}`)//just console logging
      //TODO: If app is on same page, don't search, add this.
-      cy.visit('/#/196025249156d/dashboard/')//go to default starting page - to get to nav menu
+     cy.visit('/slm/').reload(true)
+     // cy.visit('/#/196025249156d/dashboard/')//go to default starting page - to get to nav menu
       cy.get('.chr-NavigationHeader-menuButtonTitleDiv').click()//open side nav bar
       cy.get('.chr-NavigationSidebarPagesHeader-ellipsisButton').click()//open page options
       cy.get(`a.chr-NavigationPageTileLink:contains(${app[i].pageName})`).click()//find custom page

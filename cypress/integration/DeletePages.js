@@ -107,23 +107,17 @@
     cy.log(`the value of ${plen} and pageName is ${Object.keys(page).length}`)//just console logging
     var alen = Object.keys(app).length
     cy.log(`the value of ${alen} and pageName is ${Object.keys(app).length}`)//just console logging
-
      
       //Delete page
     for (i = 0; i < plen; i++) {
       cy.log(`page is: ${page[i].pageName}`)
-      cy.visit('/#/196025249156d/dashboard/')//go to default starting page - to get to nav menu
+      cy.visit('/#/')//go to default starting page - to get to nav menu
       cy.get('.chr-NavigationHeader-menuButtonTitleDiv').click()//open side nav bar
-      cy.get('.chr-NavigationSidebarPagesHeader-ellipsisButton').click()//open page options
-
+      cy.get('.chr-NavigationSidebarPagesHeader-ellipsisButton').click()//open page option
       cy.get(`[title="${page[i].pageName} Page Actions"] > .smb-Button > .smb-Button-contents > .smb-Button-icon > .smb-Icon`).click()
-
       cy.get('span.smb-DropdownItem-text:contains("Delete Page")').click()
-
       cy.get('.smb-Button--primary > .smb-Button-contents > .smb-Button-children > span').click()
-
       };
-
   })//end of function (it) adds custom page
 })// end of function (describe) add custom page
 
